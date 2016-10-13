@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from abc import ABCMeta, abstractmethod
 '''
 Created on Oct 4, 2016
 
@@ -33,18 +32,7 @@ class Paragraph():
         # Tóm tắt nội dung môn học
         self.subject_summary = None
         # Nội dung chi tiết môn học
-class ObjectParser():
-    __metaclass__ = ABCMeta
-    @abstractmethod
-    def parse(self, **params):
-        pass
-    @abstractmethod
-    def is_in_process(self):
-        pass
-    @abstractmethod
-    def get_last_index(self):
-        pass
-class Lecturer(ObjectParser):
+class Lecturer():
     '''
     Giảng viên
     '''
@@ -56,7 +44,7 @@ class Lecturer(ObjectParser):
         self.position = None
         self.email = None
         self.phone = None
-class SpecializedStudy(ObjectParser):
+class SpecializedStudy():
     '''
     Bộ môn
     '''
@@ -64,7 +52,7 @@ class SpecializedStudy(ObjectParser):
         self.address = None
         self.phone = None
         self.email = None
-class Problem(ObjectParser):
+class Problem():
     def __init__(self):
         # Số thứ tự
         self.index = None
